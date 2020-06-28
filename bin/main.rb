@@ -24,6 +24,6 @@ get_files.each do |item|
   file_lines.each_with_index do |line, idx|
     my_file.doctype(line, idx)
     my_file.find_angle_brackets(line, idx)
-    code_arr << find_tag(line)
+    p line
   end
 end
