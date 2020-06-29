@@ -24,6 +24,8 @@ get_files.each do |item|
   file_lines.each_with_index do |line, idx|
     my_file.doctype(line, idx)
     my_file.find_angle_brackets(line, idx)
-    p line
+    p line.gsub!("\n", " #{idx + 1}\n")
+    p line.gsub!('>', "> #{idx + 1}\n")
+    p tempfile.syswrite(line)
   end
 end
